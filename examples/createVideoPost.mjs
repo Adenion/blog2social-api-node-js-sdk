@@ -1,0 +1,30 @@
+import { Blog2SocialClient } from '@adenion/blog2social-api-node-sdk';
+import config from './config.mjs';
+
+const client = new Blog2SocialClient({
+  serviceToken: config.serviceToken,
+  accessToken: config.accessToken,
+});
+
+const clientUserNetworkId = config.clientUserNetworkId;
+
+try {
+  const response = await client.share.createPost(clientUserNetworkId, [
+    {
+      client_user_network_id: clientUserNetworkId,
+      title: 'Blog2Social Node.js SDK Video Test',
+      message: 'This video was published using the official Blog2Social Node.js SDK.',
+      postFormat: 2,
+      mediaObjects: [
+        {
+          type: 'VIDEO',
+          url: 'https://api.blog2social.com/test/dunes_hlW4sLZz.mp4',
+        },
+      ],
+    },
+  ]);
+
+  console.log(response);
+} catch (error) {
+  console.error(error);
+}

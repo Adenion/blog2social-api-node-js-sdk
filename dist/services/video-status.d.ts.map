@@ -1,0 +1,1 @@
+{"version":3,"file":"video-status.d.ts","sourceRoot":"","sources":["../../src/services/video-status.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,YAAY,CAAC;AAE7C,qBAAa,kBAAkB;IACV,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU;IAEvC,KAAK,CAAC,CAAC,GAAG,OAAO,EAAE,UAAU,EAAE,MAAM,GAAG,OAAO,CAAC,CAAC,CAAC;CAYhE"}

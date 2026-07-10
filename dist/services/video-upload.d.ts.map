@@ -1,0 +1,1 @@
+{"version":3,"file":"video-upload.d.ts","sourceRoot":"","sources":["../../src/services/video-upload.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,UAAU,EAAE,MAAM,YAAY,CAAC;AAC7C,OAAO,KAAK,EAAE,gBAAgB,EAAE,MAAM,mBAAmB,CAAC;AAE1D,qBAAa,kBAAkB;IACV,OAAO,CAAC,QAAQ,CAAC,IAAI;gBAAJ,IAAI,EAAE,UAAU;IAEvC,WAAW,CAAC,CAAC,GAAG,OAAO,EAAE,KAAK,EAAE,gBAAgB,GAAG,OAAO,CAAC,CAAC,CAAC;CAgB3E"}
