@@ -1,5 +1,5 @@
 {
-  "name": "@adenion/blog2social-api-node-sdk",
+  "name": "@adenion/blog2social-api-node-js-sdk",
   "version": "1.0.0",
   "description": "Official Node.js SDK for the Blog2Social API.",
   "type": "module",
@@ -37,10 +37,7 @@
   "homepage": "https://www.blog2social.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adenion/blog2social-api-node-sdk.git"
-  },
-  "bugs": {
-    "url": "https://github.com/adenion/blog2social-api-node-sdk/issues"
+    "url": "git+https://github.com/Adenion/blog2social-api-node-js-sdk.git"
   },
   "license": "MIT",
   "devDependencies": {
