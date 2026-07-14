@@ -210,7 +210,7 @@ client.userApps.delete();
 API errors are thrown as `Blog2SocialApiError` and include the HTTP status and parsed response body.
 
 ```js
-import { Blog2SocialApiError } from '@adenion/blog2social-api-node-sdk';
+import { Blog2SocialApiError } from '@adenion/blog2social-api-node-js-sdk';
 
 try {
   await client.network.listNetwork();
