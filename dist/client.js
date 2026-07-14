@@ -5,7 +5,6 @@ import { ConnectionService } from './services/connection.js';
 import { CategoriesService } from './services/categories.js';
 import { UserService } from './services/user.js';
 import { ShareService } from './services/share.js';
-import { InsightsService } from './services/insights.js';
 import { VideoService } from './services/video.js';
 import { VideoUploadService } from './services/video-upload.js';
 import { VideoStatusService } from './services/video-status.js';
@@ -18,7 +17,6 @@ export class Blog2SocialClient {
     categories;
     user;
     share;
-    insights;
     video;
     videoUpload;
     videoStatus;
@@ -32,7 +30,6 @@ export class Blog2SocialClient {
         this.categories = new CategoriesService(this.http);
         this.user = new UserService(this.http);
         this.share = new ShareService(this.http);
-        this.insights = new InsightsService(this.http);
         this.video = new VideoService(this.http);
         this.videoUpload = new VideoUploadService(this.http);
         this.videoStatus = new VideoStatusService(this.http);

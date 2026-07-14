@@ -5,7 +5,6 @@ import { ConnectionService } from './services/connection.js';
 import { CategoriesService } from './services/categories.js';
 import { UserService } from './services/user.js';
 import { ShareService } from './services/share.js';
-import { InsightsService } from './services/insights.js';
 import { VideoService } from './services/video.js';
 import { VideoUploadService } from './services/video-upload.js';
 import { VideoStatusService } from './services/video-status.js';
@@ -18,7 +17,6 @@ export declare class Blog2SocialClient {
     readonly categories: CategoriesService;
     readonly user: UserService;
     readonly share: ShareService;
-    readonly insights: InsightsService;
     readonly video: VideoService;
     readonly videoUpload: VideoUploadService;
     readonly videoStatus: VideoStatusService;

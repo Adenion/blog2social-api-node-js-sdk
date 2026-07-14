@@ -1,8 +1,12 @@
 # Blog2Social API Node.js SDK
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+[![npm](https://img.shields.io/badge/npm-ready-red.svg)](https://www.npmjs.com/)
+
 Official Node.js SDK for the Blog2Social API v1.0.
 
-The SDK provides a typed, Promise-based interface for user authentication, social network connections, publishing, insights, user apps, and video uploads.
+The SDK provides a typed, Promise-based interface for authentication, network connections, publishing, user apps, network properties, and video uploads.
 
 ## Installation
 
@@ -13,8 +17,35 @@ npm install @adenion/blog2social-api-node-js-sdk
 ## Requirements
 
 - Node.js 18 or higher
+- npm
 - A Blog2Social `service_token`
 - An `access_token` for user-specific endpoints
+
+## Architecture
+
+```text
+┌──────────────────────────────┐
+│    Your Node.js Application  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│    Blog2Social Node.js SDK   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│       Blog2Social API        │
+└──────────────┬───────────────┘
+               │
+   ┌───────────┼───────────┐
+   ▼           ▼           ▼
+Facebook   LinkedIn   Instagram
+     ▼           ▼           ▼
+  Threads   Pinterest   TikTok
+
+... additional supported networks ...
+```
 
 ## Initialization
 
@@ -79,8 +110,8 @@ A video token is generated only when `video_upload_type` is `1`:
 
 ```js
 const response = await client.connection.addNetwork(
-  1, // Facebook
-  1, // Page
+  1,
+  1,
   'en',
 );
 
@@ -205,12 +236,30 @@ client.userApps.modify();
 client.userApps.delete();
 ```
 
+## Available Services
+
+```js
+client.authentication;
+client.network;
+client.connection;
+client.categories;
+client.user;
+client.share;
+client.video;
+client.videoUpload;
+client.videoStatus;
+client.app;
+client.userApps;
+```
+
 ## Error Handling
 
 API errors are thrown as `Blog2SocialApiError` and include the HTTP status and parsed response body.
 
 ```js
-import { Blog2SocialApiError } from '@adenion/blog2social-api-node-js-sdk';
+import {
+  Blog2SocialApiError,
+} from '@adenion/blog2social-api-node-js-sdk';
 
 try {
   await client.network.listNetwork();
@@ -218,21 +267,25 @@ try {
   if (error instanceof Blog2SocialApiError) {
     console.error(error.status);
     console.error(error.responseBody);
-  } else {
-    throw error;
   }
+
+  throw error;
 }
 ```
 
 ## Examples
 
-The `examples/` directory contains runnable `.mjs` examples. Copy the configuration template first:
+Ready-to-use examples are available in the `examples/` directory.
+
+Copy the example configuration before running them:
 
 ```bash
 cp examples/config.example.mjs examples/config.mjs
 ```
 
-Then run an example:
+Then add your test tokens and IDs to `examples/config.mjs`.
+
+Run an example:
 
 ```bash
 node examples/listNetwork.mjs
@@ -240,10 +293,22 @@ node examples/listNetwork.mjs
 
 ## Development
 
+Install dependencies:
+
 ```bash
 npm install
+```
+
+Build the SDK:
+
+```bash
 npm run build
-npm test
+```
+
+Inspect the npm package contents:
+
+```bash
+npm pack --dry-run
 ```
 
 ## License

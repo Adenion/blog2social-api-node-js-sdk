@@ -104,20 +104,6 @@ export interface PublishResult {
   [key: string]: unknown;
 }
 
-export interface InsightRequestItem {
-  network_id: number;
-  network_type: number;
-  client_user_network_id: number | string;
-  extern_post_id: number | string;
-  [key: string]: unknown;
-}
-
-export interface GraphRange {
-  from?: string;
-  to?: string;
-  [key: string]: unknown;
-}
-
 export interface UserAppData {
   user_app_id?: number;
   app_name?: string | number;
