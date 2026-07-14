@@ -7,7 +7,7 @@ The SDK provides a typed, Promise-based interface for user authentication, socia
 ## Installation
 
 ```bash
-npm install @adenion/blog2social-api-node-sdk
+npm install @adenion/blog2social-api-node-js-sdk
 ```
 
 ## Requirements
@@ -19,7 +19,7 @@ npm install @adenion/blog2social-api-node-sdk
 ## Initialization
 
 ```js
-import { Blog2SocialClient } from '@adenion/blog2social-api-node-sdk';
+import { Blog2SocialClient } from '@adenion/blog2social-api-node-js-sdk';
 
 const client = new Blog2SocialClient({
   serviceToken: process.env.BLOG2SOCIAL_SERVICE_TOKEN,
